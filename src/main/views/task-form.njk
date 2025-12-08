@@ -1,0 +1,58 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% extends "govuk/template.njk" %}
+
+{% block content %}
+
+    <h1 class="govuk-heading-xl">Create a New Task</h1>
+
+    {# Display the success message if it exists #}
+    {% if successMessage %}
+        {{ govukNotificationBanner({
+            html: '<p class="govuk-notification-banner__heading">' + successMessage + '</p>',
+            type: 'success'
+        }) }}
+    {% endif %}
+
+    {# Display the error summary if errors exist #}
+    {% if errors and errors.length %}
+        {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errors
+        }) }}
+    {% endif %}
+
+    <form method="post" action="/task/new">
+        
+        {{ govukInput({
+            label: {
+                text: "Task Title"
+            },
+            id: "title",
+            name: "title",
+            value: data.title,
+            errorMessage: errors | findError('title')
+        }) }}
+
+        {{ govukInput({
+            label: {
+                text: "Due Date (YYYY-MM-DDTHH:MM)"
+            },
+            id: "due-date",
+            name: "dueDate",
+            type: "datetime-local",
+            value: data.dueDate,
+            errorMessage: errors | findError('due-date')
+        }) }}
+
+        {# NOTE: The status is hardcoded as 'TO_DO' in your router, so we don't need a select here. #}
+
+        {{ govukButton({
+            text: "Create Task"
+        }) }}
+
+    </form>
+{% endblock %}
