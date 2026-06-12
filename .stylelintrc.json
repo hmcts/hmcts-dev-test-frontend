@@ -1,8 +1,7 @@
 {
   "extends": "stylelint-config-standard-scss",
-  "ignoreFiles": ["**/node_modules/**", ".yarn/**"],
+  "ignoreFiles": ["**/node_modules/**", ".yarn/**", "src/main/views/govuk/**", "src/main/public/**"],
   "rules": {
-    "string-quotes": null,
     "selector-class-pattern": null
   }
 }

@@ -38,7 +38,7 @@ function gracefulShutdownHandler(signal: string) {
     console.log('Shutting down application');
     // Close server if it's running
     httpsServer?.close(() => {
-      console.log("HTTPS server closed")
+      console.log('HTTPS server closed');
     });
   }, 4000);
 }
