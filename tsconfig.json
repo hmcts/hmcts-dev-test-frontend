@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "./src/",
+    "rootDir": "./src/",
+    "ignoreDeprecations": "6.0",
     "module": "commonjs",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -13,6 +15,7 @@
     "experimentalDecorators": true,
     "useUnknownInCatchVariables": false,
     "skipLibCheck": true,
+    "types": ["node", "jest"],
     "lib": ["es2020", "dom", "dom.iterable"],
     "baseUrl": "src/main",
     "paths": {
