@@ -1,0 +1,45 @@
+{% extends "template.njk" %}
+
+{% block content %}
+  <a href="/tasks" class="govuk-back-link">Back to tasks</a>
+
+  <h1 class="govuk-heading-xl">Create a task</h1>
+
+  <form method="post" action="/tasks" novalidate>
+
+    <div class="govuk-form-group {% if fieldErrors.title %}govuk-form-group--error{% endif %}">
+      <label class="govuk-label" for="title">Title</label>
+      {% if fieldErrors.title %}
+        <p class="govuk-error-message">{{ fieldErrors.title }}</p>
+      {% endif %}
+      <input class="govuk-input" id="title" name="title" type="text" value="{{ values.title }}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="description">Description (optional)</label>
+      <textarea class="govuk-textarea" id="description" name="description" rows="3">{{ values.description }}</textarea>
+    </div>
+
+    <div class="govuk-form-group {% if fieldErrors.status %}govuk-form-group--error{% endif %}">
+      <label class="govuk-label" for="status">Status</label>
+      {% if fieldErrors.status %}
+        <p class="govuk-error-message">{{ fieldErrors.status }}</p>
+      {% endif %}
+      <select class="govuk-select" id="status" name="status">
+        {% for status in statuses %}
+          <option value="{{ status }}" {% if values.status == status %}selected{% endif %}>{{ status }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="govuk-form-group {% if fieldErrors.dueDateTime %}govuk-form-group--error{% endif %}">
+      <label class="govuk-label" for="dueDateTime">Due date and time</label>
+      {% if fieldErrors.dueDateTime %}
+        <p class="govuk-error-message">{{ fieldErrors.dueDateTime }}</p>
+      {% endif %}
+      <input class="govuk-input" id="dueDateTime" name="dueDateTime" type="datetime-local" value="{{ values.dueDateTime }}">
+    </div>
+
+    <button class="govuk-button" data-module="govuk-button" type="submit">Save task</button>
+  </form>
+{% endblock %}

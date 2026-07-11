@@ -3,7 +3,17 @@ import { app } from '../../main/app';
 
 import request from 'supertest';
 
-jest.mock('../../main/api/tasksApi');
+jest.mock('../../main/api/tasksApi', () => {
+  const actual = jest.requireActual('../../main/api/tasksApi');
+  return {
+    ...actual,
+    getTasks: jest.fn(),
+    getTask: jest.fn(),
+    createTask: jest.fn(),
+    updateStatus: jest.fn(),
+    deleteTask: jest.fn(),
+  };
+});
 const mockedApi = tasksApi as jest.Mocked<typeof tasksApi>;
 
 describe('GET /tasks', () => {
@@ -75,5 +85,61 @@ describe('GET /tasks/:id', () => {
 
     expect(response.status).toBe(404);
     expect(mockedApi.getTask).not.toHaveBeenCalled();
+  });
+});
+
+describe('Creating a task', () => {
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
+  test('GET /tasks/new renders the create form', async () => {
+    const response = await request(app).get('/tasks/new');
+
+    expect(response.status).toBe(200);
+    expect(response.text).toContain('Create a task');
+    expect(response.text).toContain('PENDING');
+  });
+
+  test('POST /tasks creates the task and redirects to its page', async () => {
+    mockedApi.createTask.mockResolvedValue({
+      id: 5,
+      title: 'Review case file',
+      status: 'PENDING',
+      dueDateTime: '2026-07-10T09:00',
+    });
+
+    const response = await request(app).post('/tasks').type('form').send({
+      title: 'Review case file',
+      description: 'Check documents',
+      status: 'PENDING',
+      dueDateTime: '2026-07-10T09:00',
+    });
+
+    expect(mockedApi.createTask).toHaveBeenCalledWith({
+      title: 'Review case file',
+      description: 'Check documents',
+      status: 'PENDING',
+      dueDateTime: '2026-07-10T09:00',
+    });
+    expect(response.status).toBe(302);
+    expect(response.headers.location).toBe('/tasks/5');
+  });
+
+  test('POST /tasks re-renders the form with field errors when the backend rejects it', async () => {
+    mockedApi.createTask.mockRejectedValue({
+      isAxiosError: true,
+      response: { data: { fieldErrors: { title: 'title is required' } } },
+    });
+
+    const response = await request(app).post('/tasks').type('form').send({
+      title: '',
+      status: 'PENDING',
+      dueDateTime: '2026-07-10T09:00',
+    });
+
+    expect(response.status).toBe(400);
+    expect(response.text).toContain('title is required');
+    expect(response.text).toContain('Create a task');
   });
 });

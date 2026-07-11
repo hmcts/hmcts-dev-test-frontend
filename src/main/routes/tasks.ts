@@ -1,5 +1,6 @@
-import { getTask, getTasks } from '../api/tasksApi';
+import { CreateTaskInput, createTask, getTask, getTasks, taskStatuses } from '../api/tasksApi';
 
+import axios from 'axios';
 import { Application } from 'express';
 
 export default function (app: Application): void {
@@ -9,6 +10,30 @@ export default function (app: Application): void {
       res.render('tasks/list', { tasks });
     } catch {
       res.render('tasks/list', { tasks: [], errorMessage: 'Unable to load tasks at the moment.' });
+    }
+  });
+
+  app.get('/tasks/new', (req, res) => {
+    res.render('tasks/new', { values: {}, fieldErrors: {}, statuses: taskStatuses });
+  });
+
+  app.post('/tasks', async (req, res) => {
+    const input: CreateTaskInput = {
+      title: req.body.title,
+      description: req.body.description,
+      status: req.body.status,
+      dueDateTime: req.body.dueDateTime,
+    };
+
+    try {
+      const task = await createTask(input);
+      res.redirect('/tasks/' + task.id);
+    } catch (error) {
+      let fieldErrors = {};
+      if (axios.isAxiosError(error) && error.response) {
+        fieldErrors = error.response.data.fieldErrors || {};
+      }
+      res.status(400).render('tasks/new', { values: input, fieldErrors, statuses: taskStatuses });
     }
   });
 
