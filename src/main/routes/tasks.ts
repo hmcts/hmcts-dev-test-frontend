@@ -1,4 +1,12 @@
-import { CreateTaskInput, createTask, deleteTask, getTask, getTasks, taskStatuses, updateStatus } from '../api/tasksApi';
+import {
+  CreateTaskInput,
+  createTask,
+  deleteTask,
+  getTask,
+  getTasks,
+  taskStatuses,
+  updateStatus,
+} from '../api/tasksApi';
 
 import axios from 'axios';
 import { Application } from 'express';
