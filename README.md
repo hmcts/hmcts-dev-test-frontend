@@ -7,6 +7,37 @@ It is a server-rendered application: the Express routes call the backend Task AP
 and render GOV.UK-styled pages with Nunjucks. The browser only ever talks to this
 frontend, which talks to the backend on its behalf.
 
+## How to run
+
+> **Note:** The `cd` paths below are examples. Change them to wherever you cloned
+> the two repositories on your machine.
+
+This solution has two parts that run together: the **backend** (the API) and the
+**frontend** (this web UI). Run each in its own terminal, and start the backend first.
+
+### 1. Backend (start first) — http://localhost:4000
+
+```bash
+cd /Users/user/HMCTSTest/hmcts-dev-test-backend
+./gradlew bootRun
+```
+
+### 2. Frontend — http://localhost:3100
+
+```bash
+cd /Users/user/HMCTSTest/hmcts-dev-test-frontend
+yarn install   # first time only
+yarn build     # first time, or after changes
+yarn start
+```
+
+Then open **http://localhost:3100** in your browser (it redirects to the task list).
+
+- API docs (Swagger UI): http://localhost:4000/swagger-ui.html
+- Start the backend before the frontend, because the frontend calls the backend API.
+- If a port is already in use, free it with `lsof -ti tcp:3100 | xargs kill -9`
+  (or `tcp:4000` for the backend).
+
 ## Tech stack
 
 - Node.js 20
