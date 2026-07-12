@@ -143,3 +143,43 @@ describe('Creating a task', () => {
     expect(response.text).toContain('Create a task');
   });
 });
+
+describe('Updating and deleting a task', () => {
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
+  test('POST /tasks/:id/status updates the status and redirects back to the task', async () => {
+    mockedApi.updateStatus.mockResolvedValue({
+      id: 1,
+      title: 'Review case file',
+      status: 'COMPLETED',
+      dueDateTime: '2026-07-10T09:00',
+    });
+
+    const response = await request(app).post('/tasks/1/status').type('form').send({ status: 'COMPLETED' });
+
+    expect(mockedApi.updateStatus).toHaveBeenCalledWith(1, 'COMPLETED');
+    expect(response.status).toBe(302);
+    expect(response.headers.location).toBe('/tasks/1');
+  });
+
+  test('POST /tasks/:id/delete deletes the task and redirects to the list', async () => {
+    mockedApi.deleteTask.mockResolvedValue();
+
+    const response = await request(app).post('/tasks/1/delete');
+
+    expect(mockedApi.deleteTask).toHaveBeenCalledWith(1);
+    expect(response.status).toBe(302);
+    expect(response.headers.location).toBe('/tasks');
+  });
+
+  test('POST /tasks/:id/delete returns 404 when the task does not exist', async () => {
+    mockedApi.deleteTask.mockRejectedValue(new Error('not found'));
+
+    const response = await request(app).post('/tasks/999/delete');
+
+    expect(response.status).toBe(404);
+    expect(response.text).toContain('Task not found');
+  });
+});

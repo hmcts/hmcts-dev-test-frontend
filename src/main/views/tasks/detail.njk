@@ -19,4 +19,20 @@
       <dd class="govuk-summary-list__value">{{ task.dueDateTime }}</dd>
     </div>
   </dl>
+
+  <form method="post" action="/tasks/{{ task.id }}/status">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="status">Update status</label>
+      <select class="govuk-select" id="status" name="status">
+        {% for status in statuses %}
+          <option value="{{ status }}" {% if task.status == status %}selected{% endif %}>{{ status }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button class="govuk-button" data-module="govuk-button" type="submit">Update status</button>
+  </form>
+
+  <form method="post" action="/tasks/{{ task.id }}/delete">
+    <button class="govuk-button govuk-button--warning" data-module="govuk-button" type="submit">Delete task</button>
+  </form>
 {% endblock %}
