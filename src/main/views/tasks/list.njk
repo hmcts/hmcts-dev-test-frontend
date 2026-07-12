@@ -1,0 +1,38 @@
+{% extends "template.njk" %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Tasks</h1>
+
+  <a href="/tasks/new" class="govuk-button" data-module="govuk-button">Create task</a>
+
+  {% if errorMessage %}
+    <p class="govuk-body govuk-error-message">{{ errorMessage }}</p>
+  {% endif %}
+
+  {% if tasks.length == 0 %}
+    <p class="govuk-body">There are no tasks yet.</p>
+  {% else %}
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Title</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Due date/time</th>
+          <th scope="col" class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% for task in tasks %}
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">{{ task.title }}</td>
+            <td class="govuk-table__cell">{{ task.status }}</td>
+            <td class="govuk-table__cell">{{ task.dueDateTime }}</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link" href="/tasks/{{ task.id }}">View</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}
