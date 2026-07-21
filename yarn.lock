@@ -6207,7 +6207,7 @@ __metadata:
     "@types/serve-favicon": "npm:^2.5.7"
     "@types/supertest": "npm:^7.2.0"
     "@typescript-eslint/parser": "npm:^8.62.1"
-    axios: "npm:^1.18.1"
+    axios: "npm:^1.18.0"
     codeceptjs: "npm:^4.0.8"
     cookie-parser: "npm:^1.4.7"
     copy-webpack-plugin: "npm:^14.0.0"
