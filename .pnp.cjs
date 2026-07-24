@@ -8508,10 +8508,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["immutable", [\
-      ["npm:5.1.6", {\
-        "packageLocation": "./.yarn/cache/immutable-npm-5.1.6-827ccd5bc0-4ba416dac4.zip/node_modules/immutable/",\
+      ["npm:5.1.9", {\
+        "packageLocation": "./.yarn/cache/immutable-npm-5.1.9-35365e455d-dc61ea6f79.zip/node_modules/immutable/",\
         "packageDependencies": [\
-          ["immutable", "npm:5.1.6"]\
+          ["immutable", "npm:5.1.9"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -11894,7 +11894,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@parcel/watcher", "npm:2.5.6"],\
           ["chokidar", "npm:5.0.0"],\
-          ["immutable", "npm:5.1.6"],\
+          ["immutable", "npm:5.1.9"],\
           ["sass", "npm:1.101.0"],\
           ["source-map-js", "npm:1.0.2"]\
         ],\
