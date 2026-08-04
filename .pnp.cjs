@@ -7298,7 +7298,7 @@ const RAW_RUNTIME_STATE =
           ["@types/express", null],\
           ["express", "npm:5.2.1"],\
           ["express-rate-limit", "virtual:aa6b60ab69820dfb0cfbacb040617df41ba52206e4e9c511de3cd29595e1dc4e99319072f9836f7f0e49603f39825783bf11d505acf7ef0047709e2d1368f727#npm:8.5.2"],\
-          ["ip-address", "npm:10.2.0"]\
+          ["ip-address", "npm:10.4.0"]\
         ],\
         "packagePeers": [\
           "@types/express",\
@@ -8646,10 +8646,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["ip-address", [\
-      ["npm:10.2.0", {\
-        "packageLocation": "./.yarn/cache/ip-address-npm-10.2.0-6fea410c3e-12fec399e1.zip/node_modules/ip-address/",\
+      ["npm:10.4.0", {\
+        "packageLocation": "./.yarn/cache/ip-address-npm-10.4.0-6a90d50243-8a286dd112.zip/node_modules/ip-address/",\
         "packageDependencies": [\
-          ["ip-address", "npm:10.2.0"]\
+          ["ip-address", "npm:10.4.0"]\
         ],\
         "linkType": "HARD"\
       }]\
