@@ -1736,17 +1736,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@hono/node-server", [\
-      ["npm:1.19.14", {\
-        "packageLocation": "./.yarn/cache/@hono-node-server-npm-1.19.14-48aa17238f-618dd95fee.zip/node_modules/@hono/node-server/",\
+      ["npm:1.19.17", {\
+        "packageLocation": "./.yarn/cache/@hono-node-server-npm-1.19.17-66cb50cbec-b3fb8f627e.zip/node_modules/@hono/node-server/",\
         "packageDependencies": [\
-          ["@hono/node-server", "npm:1.19.14"]\
+          ["@hono/node-server", "npm:1.19.17"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:aa6b60ab69820dfb0cfbacb040617df41ba52206e4e9c511de3cd29595e1dc4e99319072f9836f7f0e49603f39825783bf11d505acf7ef0047709e2d1368f727#npm:1.19.14", {\
-        "packageLocation": "./.yarn/__virtual__/@hono-node-server-virtual-b6de91beee/0/cache/@hono-node-server-npm-1.19.14-48aa17238f-618dd95fee.zip/node_modules/@hono/node-server/",\
+      ["virtual:aa6b60ab69820dfb0cfbacb040617df41ba52206e4e9c511de3cd29595e1dc4e99319072f9836f7f0e49603f39825783bf11d505acf7ef0047709e2d1368f727#npm:1.19.17", {\
+        "packageLocation": "./.yarn/__virtual__/@hono-node-server-virtual-274faf59c4/0/cache/@hono-node-server-npm-1.19.17-66cb50cbec-b3fb8f627e.zip/node_modules/@hono/node-server/",\
         "packageDependencies": [\
-          ["@hono/node-server", "virtual:aa6b60ab69820dfb0cfbacb040617df41ba52206e4e9c511de3cd29595e1dc4e99319072f9836f7f0e49603f39825783bf11d505acf7ef0047709e2d1368f727#npm:1.19.14"],\
+          ["@hono/node-server", "virtual:aa6b60ab69820dfb0cfbacb040617df41ba52206e4e9c511de3cd29595e1dc4e99319072f9836f7f0e49603f39825783bf11d505acf7ef0047709e2d1368f727#npm:1.19.17"],\
           ["@types/hono", null],\
           ["hono", "npm:4.12.25"]\
         ],\
@@ -2835,7 +2835,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@modelcontextprotocol-sdk-virtual-aa6b60ab69/0/cache/@modelcontextprotocol-sdk-npm-1.29.0-51771aaf2d-ff551b97e0.zip/node_modules/@modelcontextprotocol/sdk/",\
         "packageDependencies": [\
           ["@cfworker/json-schema", null],\
-          ["@hono/node-server", "virtual:aa6b60ab69820dfb0cfbacb040617df41ba52206e4e9c511de3cd29595e1dc4e99319072f9836f7f0e49603f39825783bf11d505acf7ef0047709e2d1368f727#npm:1.19.14"],\
+          ["@hono/node-server", "virtual:aa6b60ab69820dfb0cfbacb040617df41ba52206e4e9c511de3cd29595e1dc4e99319072f9836f7f0e49603f39825783bf11d505acf7ef0047709e2d1368f727#npm:1.19.17"],\
           ["@modelcontextprotocol/sdk", "virtual:e29cb1ad20547869241cc5fb4e134dda868dc9f4f66b62206e1b4f322b58cef158c793fb8309e583b4206049ddfad4d3bb34eb06ae1951836872565a78f13d62#npm:1.29.0"],\
           ["@types/cfworker__json-schema", null],\
           ["@types/zod", null],\
