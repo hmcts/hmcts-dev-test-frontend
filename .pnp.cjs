@@ -63,7 +63,7 @@ const RAW_RUNTIME_STATE =
           ["nodemon", "npm:3.1.14"],\
           ["nunjucks", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:3.2.4"],\
           ["playwright", "npm:1.61.1"],\
-          ["postcss", "npm:8.5.16"],\
+          ["postcss", "npm:8.5.23"],\
           ["prettier", "npm:3.9.4"],\
           ["sass", "npm:1.101.0"],\
           ["sass-loader", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:17.0.0"],\
@@ -8200,7 +8200,7 @@ const RAW_RUNTIME_STATE =
           ["nodemon", "npm:3.1.14"],\
           ["nunjucks", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:3.2.4"],\
           ["playwright", "npm:1.61.1"],\
-          ["postcss", "npm:8.5.16"],\
+          ["postcss", "npm:8.5.23"],\
           ["prettier", "npm:3.9.4"],\
           ["sass", "npm:1.101.0"],\
           ["sass-loader", "virtual:3a02cceef93055271d0890b855d0c93a770c9c876ee9b808cf9e23d8d1b8581b5b6efcfb80a9768d650dfa22f93777eca81ae9ef4de2301b22a7619649eb692a#npm:17.0.0"],\
@@ -10552,6 +10552,13 @@ const RAW_RUNTIME_STATE =
           ["nanoid", "npm:3.3.12"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:3.3.18", {\
+        "packageLocation": "./.yarn/cache/nanoid-npm-3.3.18-3dd24ff2e6-1b3b4fdac8.zip/node_modules/nanoid/",\
+        "packageDependencies": [\
+          ["nanoid", "npm:3.3.18"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["napi-postinstall", [\
@@ -11205,12 +11212,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:8.5.16", {\
-        "packageLocation": "./.yarn/cache/postcss-npm-8.5.16-086b209555-b39408900a.zip/node_modules/postcss/",\
+      ["npm:8.5.23", {\
+        "packageLocation": "./.yarn/cache/postcss-npm-8.5.23-ea01eac089-8387f42121.zip/node_modules/postcss/",\
         "packageDependencies": [\
-          ["nanoid", "npm:3.3.12"],\
+          ["nanoid", "npm:3.3.18"],\
           ["picocolors", "npm:1.1.1"],\
-          ["postcss", "npm:8.5.16"],\
+          ["postcss", "npm:8.5.23"],\
           ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
@@ -11361,7 +11368,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/postcss-scss-virtual-4934d983d8/0/cache/postcss-scss-npm-4.0.9-b492c55307-d191c77134.zip/node_modules/postcss-scss/",\
         "packageDependencies": [\
           ["@types/postcss", null],\
-          ["postcss", "npm:8.5.16"],\
+          ["postcss", "npm:8.5.23"],\
           ["postcss-scss", "virtual:5129494db8790099a29d6167868f0692ef824966f0c0f49635d8cacc7c5d975edcc17a5071c9f06878d48e0a452dacf966abefd7e679e42d4a0ce5b31059d09b#npm:4.0.9"]\
         ],\
         "packagePeers": [\
@@ -12582,7 +12589,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@types/postcss", null],\
           ["@types/stylelint", null],\
-          ["postcss", "npm:8.5.16"],\
+          ["postcss", "npm:8.5.23"],\
           ["postcss-scss", "virtual:5129494db8790099a29d6167868f0692ef824966f0c0f49635d8cacc7c5d975edcc17a5071c9f06878d48e0a452dacf966abefd7e679e42d4a0ce5b31059d09b#npm:4.0.9"],\
           ["stylelint", "npm:17.14.0"],\
           ["stylelint-config-recommended", "virtual:5129494db8790099a29d6167868f0692ef824966f0c0f49635d8cacc7c5d975edcc17a5071c9f06878d48e0a452dacf966abefd7e679e42d4a0ce5b31059d09b#npm:18.0.0"],\
@@ -12634,7 +12641,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@types/postcss", null],\
           ["@types/stylelint", null],\
-          ["postcss", "npm:8.5.16"],\
+          ["postcss", "npm:8.5.23"],\
           ["stylelint", "npm:17.14.0"],\
           ["stylelint-config-recommended-scss", "virtual:d77d9183ddfae79fe02e1fd939e40630e9c409853195cd1199c17558c17809c52261dde2d0b57c74366c08b039399f57b698940ebb1a26cc969981088d96f41c#npm:17.0.1"],\
           ["stylelint-config-standard", "virtual:d77d9183ddfae79fe02e1fd939e40630e9c409853195cd1199c17558c17809c52261dde2d0b57c74366c08b039399f57b698940ebb1a26cc969981088d96f41c#npm:40.0.0"],\
